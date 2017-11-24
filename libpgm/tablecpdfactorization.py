@@ -417,8 +417,9 @@ class TableCPDFactorization():
                     summ = 0
                     for val in relevantfactors[0].vals:
                         summ += val
-                    for x in range(len(relevantfactors[0].vals)):
-                        relevantfactors[0].vals[x] /= summ
+                    if summ > 0:
+                        for x in range(len(relevantfactors[0].vals)):
+                            relevantfactors[0].vals[x] /= summ
 
                 # convert random number
                 val = random.random()
